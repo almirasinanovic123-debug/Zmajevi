@@ -1,38 +1,38 @@
-# Football Manager: Zmajevi — prototip v0.1
+# Football Manager: Zmajevi — v0.2
 
-Prvi statični prototip igre za reprezentaciju Bosne i Hercegovine. Napravljen je u HTML/CSS/JavaScriptu bez build alata, tako da se može otvoriti direktno ili objaviti na GitHub Pages.
+Prvi igrivi prototip menadžera reprezentacije Bosne i Hercegovine. Projekat je statična web aplikacija (HTML, CSS, JavaScript) i može se objaviti na GitHub Pages.
 
-## Pokretanje lokalno
+## Pokretanje
 
-1. Preuzmi ZIP i raspakuj ga.
-2. Otvori `index.html` u pregledniku.
-3. Za najbolji rezultat koristi noviji Chrome, Firefox ili Edge.
+1. Raspakuj `football-manager-zmajevi-v0.2.zip`.
+2. Otvori folder `zmajevi-game`.
+3. Otvori `index.html` u pregledniku.
+4. Na ekranu **Centar utakmice** izaberi protivnika, takmičenje i da li je BiH domaćin ili gost, pa klikni **Igraj utakmicu**.
 
-## Objavljivanje na GitHub Pages
+## Šta je uključeno
 
-1. Napravi GitHub repozitorij, npr. `football-manager-zmajevi`.
-2. Uploadaj sva četiri fajla/foldera iz ZIP-a (`index.html`, `styles.css`, `app.js`, `players.js`, `README.md`) u korijen repozitorija.
-3. Otvori **Settings → Pages**.
-4. U odjeljku **Build and deployment** izaberi **Deploy from a branch**, branch `main`, folder `/ (root)`, pa **Save**.
-5. Sačekaj da GitHub objavi stranicu.
-
-## Šta radi u v0.1
-
-- Kontrolna tabla i mobilna navigacija.
-- Pretraga i filteri za igrače.
-- Profili s OVR/POT ocjenama.
-- Formacije 4-3-3, 4-2-3-1, 4-4-2, 3-5-2 i 5-3-2.
-- Promjena igrača na terenu i čuvanje taktike.
-- Jednostavna probna simulacija utakmice.
-- Lokalno čuvanje karijere kroz `localStorage`.
+- Lista od 40 stvarnih igrača: polazni spisak A reprezentacije za SP 2026 i dodatni kandidati.
+- EA SPORTS FC 26 OVR/POT ocjene iz FIFA Indexa kada su dostupne. Ako ocjena nije potvrđena, prikazuje se crtica umjesto izmišljene vrijednosti.
+- Pretraga i filteri igrača, profili i izvor ocjene.
+- Formacije 4-3-3, 4-2-3-1, 4-4-2, 3-5-2 i 5-3-2; izbor igrača u postavi.
+- Izbor između 28 protivničkih reprezentacija, takmičenja i domaće/gostujuće utakmice.
+- Simulirani rezultat, događaji utakmice i osnovna statistika.
+- Historija odigranih mečeva i čuvanje karijere u `localStorage` preglednika.
+- Prilagođen prikaz za telefon i desktop.
 
 ## Izvori i ograničenja podataka
 
-Ukupne ocjene su preuzete iz FIFA Index FC 26 baze za igrače iz BiH; potencijali su preuzeti iz tima FC 26 gdje su prikazani, a za igrače koji nisu u tom sastavu potencijal je postavljen na prikazani OVR jer javna nacionalna lista tako prikazuje tabelu. To je izvorna vrijednost iz igre, ne korisnički unos. Različita izdanja EA FC/FC 26 baze mogu se razlikovati. Statusi „prvi tim/kandidat/mladi igrač”, godine i klupski podaci u ovoj prvoj verziji su početni podaci koje treba dodatno provjeriti prije konačnog izdanja. Ovo je nezvanični fan projekat i nije povezan s EA Sports ili NS/FS BiH.
+- Zvanični spisak BiH za SP 2026: https://www.fifa.com/en/articles/bosnia-and-herzegovina-sergej-barbarez-names-squad
+- Spisak na stranici NS/FS BiH: https://www.nfsbih.ba/en/sp2026-squad/sp-2026-squad-list-en-gb/
+- EA SPORTS FC 26 reprezentacija BiH: https://fifaindex.com/teams/105013-bosnia-herzegovina/fc26
+- EA SPORTS FC 26 ocjene igrača po nacionalnosti: https://fifaindex.com/nations/8-bosnia-and-herzegovina/fc26
 
-## Sljedeće faze
+Ocjene su verzijske vrijednosti iz FC 26, nisu zvanične ocjene Saveza niti nužno aktuelne ocjene u kasnijim izdanjima igre. Kandidat nije isto što i potvrđen aktuelni poziv. Neke godine/klubovi u FC 26 podacima mogu biti zastarjeli.
 
-1. Provjerena baza igrača i detaljni atributi po javnim profilima.
-2. Pravi match engine s dosljednom statistikom i događajima.
-3. Pseudo-3D teren s animiranim igračima.
-4. Takmičenja, kalendar, tabele i višesezonska karijera.
+Protivničke reprezentacije i njihova snaga u ovoj verziji su za potrebe simulacije; nisu predstavljene kao službene FIFA/EA ocjene. Rezultati se generišu lokalno i nisu stvarni rezultati niti prognoze.
+
+## Ograničenja prototipa
+
+- Utakmica se trenutno simulira odmah; još nema animiranog 3D terena.
+- Takmičenja su izbor za kontekst meča, a ne potpuna simulacija stvarnog rasporeda, žrijeba ili pravila kvalifikacija.
+- Karijera se čuva u istom pregledniku/uređaju; nema online sinhronizacije.
