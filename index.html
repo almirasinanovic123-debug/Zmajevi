@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Football Manager: Zmajevi</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Zmajevi početna stranica"><span class="brand-mark">Z</span><span><strong>ZMAJEVI</strong><small>FOOTBALL MANAGER</small></span></a>
+      <div class="team-chip"><span class="flag">🇧🇦</span><span><strong>Bosna i Hercegovina</strong><small>A reprezentacija</small></span></div>
+      <nav class="main-nav" aria-label="Glavna navigacija">
+        <button class="nav-item active" data-view="dashboard"><span>▦</span>Kontrolna tabla</button>
+        <button class="nav-item" data-view="squad"><span>♙</span>Sastav i igrači</button>
+        <button class="nav-item" data-view="tactics"><span>⚽</span>Taktika</button>
+        <button class="nav-item" data-view="match"><span>◉</span>Centar utakmice</button>
+        <button class="nav-item" data-view="history"><span>▤</span>Statistika</button>
+      </nav>
+      <div class="sidebar-footer"><span class="status-dot"></span>Offline karijera <small>Podaci se čuvaju u ovom pregledniku</small></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div><p class="eyebrow">SELEKTORSKI CENTAR</p><h1 id="page-title">Kontrolna tabla</h1></div><div class="topbar-right"><span class="season-pill">SEZONA 2026/27</span><button id="save-btn" class="button button-quiet">Sačuvaj karijeru</button></div></header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="welcome-row"><div><p class="eyebrow">DOBRO DOŠLA, SELEKTORICE</p><h2>Vrijeme je za Zmajeve. <span>🇧🇦</span></h2><p class="muted">Sastavi ekipu, pronađi pravu taktiku i povedi BiH do trofeja.</p></div><div class="badge-emblem">🇧🇦<small>NS/FS BiH</small></div></div>
+        <div class="stat-grid">
+          <article class="stat-card"><span class="stat-label">Broj igrača u bazi</span><strong id="player-count">30</strong><span class="stat-foot">Prvi tim i kandidati</span></article>
+          <article class="stat-card"><span class="stat-label">Prosječna ocjena</span><strong id="avg-rating">—</strong><span class="stat-foot">EA FC baza, ocjene 1–100</span></article>
+          <article class="stat-card"><span class="stat-label">Najbolji igrač</span><strong id="best-player">—</strong><span class="stat-foot" id="best-rating">—</span></article>
+          <article class="stat-card"><span class="stat-label">Formacija</span><strong id="dashboard-formation">4-3-3</strong><span class="stat-foot">Trenutno izabrana taktika</span></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel next-match-panel"><div class="panel-heading"><div><p class="eyebrow">SLJEDEĆI KORAK</p><h3>Pripremi ekipu</h3></div><span class="pill pill-green">PRVI PROTOTIP</span></div><p class="muted">Prije nego što krenemo na stvarna takmičenja, složi prvih 11 i isprobaj jednostavnu simulaciju utakmice.</p><div class="matchup"><div class="match-team"><span class="large-flag">🇧🇦</span><strong>BiH</strong></div><div class="versus">VS</div><div class="match-team"><span class="large-flag">🌍</span><strong>Protivnik</strong></div></div><button class="button button-primary" data-go="tactics">Otvori taktiku <span>→</span></button></article>
+          <article class="panel"><div class="panel-heading"><div><p class="eyebrow">BRZI PRISTUP</p><h3>Reprezentacija</h3></div><span class="panel-icon">♙</span></div><div class="quick-links"><button data-go="squad"><span>♙</span><span><strong>Sastav i igrači</strong><small>Pretraži profile i ocjene</small></span><b>→</b></button><button data-go="tactics"><span>⚽</span><span><strong>Postavi taktiku</strong><small>Formacija i prvih 11</small></span><b>→</b></button><button data-go="match"><span>◉</span><span><strong>Simuliraj utakmicu</strong><small>Isprobaj prvi meč</small></span><b>→</b></button></div></article>
+        </div>
+        <article class="panel"><div class="panel-heading"><div><p class="eyebrow">BILJEŠKA O PODACIMA</p><h3>Kako su ocjene određene?</h3></div></div><p class="muted">Ukupne ocjene i potencijali u ovoj početnoj bazi preuzeti su iz javno dostupnih EA SPORTS FC 26 rating baza, prvenstveno FIFA Index/SoFIFA. To nisu zvanične ocjene reprezentacije niti potvrda trenutnog poziva. Kasnije ćemo dopuniti detaljne atribute prema javnim profilima igrača i navesti izvor uz bazu.</p><div class="source-links"><a href="https://fifaindex.com/nations/8-bosnia-and-herzegovina/fc26" target="_blank" rel="noreferrer">FIFA Index · BiH FC 26 ↗</a><a href="https://sofifa.com/" target="_blank" rel="noreferrer">SoFIFA ↗</a></div></article>
+      </section>
+
+      <section class="view" id="view-squad">
+        <div class="section-intro"><div><p class="eyebrow">IGRAČI</p><h2>Ekipa Zmajeva</h2><p class="muted">Ocjene su zasnovane na javnim EA FC 26 rating podacima. Filteri pomažu da pronađeš igrača za svaku poziciju.</p></div><div class="squad-count" id="squad-count">30 igrača</div></div>
+        <div class="filter-bar"><label class="search-box"><span>⌕</span><input id="player-search" type="search" placeholder="Pretraži igrača…" autocomplete="off" /></label><select id="position-filter" aria-label="Filtriraj po poziciji"><option value="all">Sve pozicije</option><option value="GK">Golmani</option><option value="DEF">Odbrana</option><option value="MID">Vezni red</option><option value="ATT">Napad</option></select><select id="status-filter" aria-label="Filtriraj status"><option value="all">Svi statusi</option><option value="core">Prvi tim</option><option value="candidate">Kandidat</option><option value="young">Mladi igrač</option></select><select id="sort-filter" aria-label="Sortiraj igrače"><option value="rating">Ocjena: najviša</option><option value="name">Ime: A–Ž</option><option value="potential">Potencijal: najviši</option></select></div>
+        <div class="squad-layout"><div class="player-table-wrap"><table class="player-table"><thead><tr><th>Igrač</th><th>Poz.</th><th>God.</th><th>OCJ</th><th>POT</th><th>Status</th></tr></thead><tbody id="player-table-body"></tbody></table><div id="empty-state" class="empty-state hidden">Nema igrača koji odgovaraju pretrazi.</div></div><aside class="panel player-detail" id="player-detail"><div class="empty-profile"><span>♙</span><h3>Odaberi igrača</h3><p class="muted">Klikni na ime u listi da vidiš profil i osnovne podatke.</p></div></aside></div>
+      </section>
+
+      <section class="view" id="view-tactics">
+        <div class="section-intro"><div><p class="eyebrow">PLAN UTAKMICE</p><h2>Formacija i prvih 11</h2><p class="muted">Izaberi formaciju, a zatim postavi igrače na pozicije. Ovo je početni taktički prototip.</p></div><button class="button button-quiet" id="reset-lineup">Vrati početnu postavu</button></div>
+        <div class="tactics-layout"><article class="panel pitch-panel"><div class="pitch-header"><span>TEREN</span><label>Formacija <select id="formation-select"><option>4-3-3</option><option>4-2-3-1</option><option>4-4-2</option><option>3-5-2</option><option>5-3-2</option></select></label></div><div class="pitch" id="pitch"><div class="pitch-line halfway"></div><div class="pitch-circle"></div><div class="penalty-box top-box"></div><div class="penalty-box bottom-box"></div><div class="pitch-players" id="pitch-players"></div></div><div class="lineup-footer"><span id="lineup-count">0/11 igrača</span><span id="lineup-rating">Prosječna ocjena: —</span></div></article><article class="panel tactics-controls"><p class="eyebrow">TIMSKE POSTAVKE</p><h3>Stil igre</h3><label class="field-label">Mentalitet<select id="mentality"><option>Uravnotežen</option><option>Napadački</option><option>Defanzivni</option></select></label><label class="field-label">Presing<select id="pressing"><option>Standardni</option><option>Visoki presing</option><option>Niski blok</option></select></label><label class="field-label">Izgradnja napada<select id="build-up"><option>Kratka dodavanja</option><option>Brzi napadi</option><option>Duga lopta</option></select></label><div class="notice"><strong>Napomena</strong><p>Prvi prototip koristi jednostavan sistem rasporeda. U sljedećoj fazi dodajemo prevlačenje igrača, zamjene i detaljnije taktičke upute.</p></div><button class="button button-primary full-width" id="save-tactics">Sačuvaj taktiku</button><button class="button button-secondary full-width" data-go="match">Idi na utakmicu →</button></article></div>
+      </section>
+
+      <section class="view" id="view-match">
+        <div class="section-intro"><div><p class="eyebrow">MATCH ENGINE · PROTOTIP</p><h2>Centar utakmice</h2><p class="muted">Simulacija rezultata je zasad pojednostavljena. Pseudo-3D prikaz terena dolazi u narednoj iteraciji.</p></div><button class="button button-primary" id="play-match">▶ Simuliraj utakmicu</button></div>
+        <article class="panel match-score-panel"><div class="match-score-team"><span class="large-flag">🇧🇦</span><strong>Bosna i Hercegovina</strong></div><div class="score-box"><div class="score" id="match-score">— : —</div><div class="muted" id="match-status">Spremno za početak</div></div><div class="match-score-team"><span class="large-flag">🌍</span><strong>Izbor protivnika</strong></div></article>
+        <div class="match-grid"><article class="panel"><div class="panel-heading"><h3>Tok utakmice</h3><span class="pill">90 min</span></div><ol class="event-feed" id="event-feed"><li class="muted">Klikni „Simuliraj utakmicu” da pokreneš prvi meč.</li></ol></article><article class="panel"><div class="panel-heading"><h3>Statistika</h3></div><div class="match-stats" id="match-stats"><div><span>Posjed lopte</span><strong>—</strong></div><div><span>Šutevi</span><strong>—</strong></div><div><span>U okvir</span><strong>—</strong></div><div><span>Korneri</span><strong>—</strong></div></div><p class="muted small">Rezultati su generisani probnom simulacijom, nisu stvarne utakmice.</p></article></div>
+      </section>
+
+      <section class="view" id="view-history"><div class="section-intro"><div><p class="eyebrow">KARIJERA</p><h2>Statistika i historija</h2><p class="muted">Ovdje će se prikazivati rezultati, trofeji i rekordi iz sačuvane karijere.</p></div></div><article class="panel history-empty"><span>▤</span><h3>Historija tek počinje</h3><p class="muted">Odigraj prvu probnu utakmicu. U sljedećim verzijama ćemo dodati sezonu, kvalifikacije, tabele i trajnu historiju utakmica.</p></article></section>
+      <footer class="app-footer"><span>FOOTBALL MANAGER: ZMAJEVI</span><span>Prototip v0.1 · Nije povezan s EA Sports</span></footer>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobilna navigacija"><button class="nav-item active" data-view="dashboard"><span>▦</span><small>Početna</small></button><button class="nav-item" data-view="squad"><span>♙</span><small>Sastav</small></button><button class="nav-item" data-view="tactics"><span>⚽</span><small>Taktika</small></button><button class="nav-item" data-view="match"><span>◉</span><small>Utakmica</small></button><button class="nav-item" data-view="history"><span>▤</span><small>Historija</small></button></nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="players.js"></script><script src="app.js"></script>
+</body>
+</html>
